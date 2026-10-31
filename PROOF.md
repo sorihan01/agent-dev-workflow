@@ -10,7 +10,7 @@ Every number below was measured on **2026-10-31** in the private workspace these
 | Dated decision records | 101 | `ls ops/decisions \| grep -cE '^20[0-9]{2}-'` |
 | Retired names the drift check enforces | 15 | `grep -cvE '^\s*(#\|$)' ops/deprecated-terms.txt` |
 | Running logs (`NEXT.md`) kept current by the Stop hook | 8 | `find . -name NEXT.md -not -path '*/node_modules/*' -not -path '*/archive/*'` |
-| In-house tools (`ops/tools/`) | 31 | `ls ops/tools \| wc -l` |
+| In-house tools (`ops/tools/`) | 26 (22 scripts + 4 tool folders) | `ls -p ops/tools \| grep -v / \| grep -vE '\.test\.\|template' \| wc -l` for scripts; folders listed by `ls -p ops/tools \| grep /`, minus `fixtures/` (test data) |
 | Skills written in-house | 10 | `/decide /next /wrap /capture /standup /research /jobsearch /youtube-script /content-intake` + `session-guard`; the other skills in the folder are installed third-party packs |
 | People | 1 founder + AI agents | — |
 

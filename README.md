@@ -1,6 +1,6 @@
 # agent-dev-workflow
 
-How one founder runs real ventures through AI coding agents: **13 repos, 824 commits and 101 recorded decisions between 2026-09-09 and 2026-10-31** ([PROOF.md](PROOF.md)). The agents do the building. The human approves plans and reads ✅/❌ reports. Every rule that matters is enforced by a script, not just written down.
+How one founder runs real ventures through AI coding agents: **13 repos, 824 commits and 101 recorded decisions between 2026-09-09 and 2026-10-31** ([PROOF.md](PROOF.md)). The agents do the building. The human approves plans and reads ✅/❌ reports. The rules a script can enforce are enforced by one. The rest are written so a reviewer can spot a skipped step from the report.
 
 Each workflow below installs on its own. Take one, or all three.
 
