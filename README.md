@@ -70,3 +70,7 @@ It installs every workflow into throwaway projects and proves each enforcement f
 - **A health check on every session start:** tools, keys (names only, never values), stale docs and stale views, silent when everything is fine.
 - **Output shaped for the reviewer:** every artefact is a card (claim with ✅/❌/⚠️/ℹ️, so what, evidence, next), because review fatigue is the real constraint, not agent speed.
 - **Unattended runs:** scheduled jobs with spend caps and a check gate that deploy only under a named decision.
+
+## License
+
+[MIT](LICENSE) © 2026 Sori Han

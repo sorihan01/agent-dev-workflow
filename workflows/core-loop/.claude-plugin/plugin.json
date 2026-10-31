@@ -8,5 +8,6 @@
   },
   "skills": [
     "./skills/"
-  ]
+  ],
+  "license": "MIT"
 }
