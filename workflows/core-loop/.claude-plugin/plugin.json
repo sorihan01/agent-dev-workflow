@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "core-loop",
+  "version": "1.0.0",
+  "description": "Plan before code, three checks before done, a running log the agent can't skip: /ticket, /start, /wrap and a Stop hook that enforces NEXT.md.",
+  "author": { "name": "Sori Han" },
+  "license": "MIT",
+  "skills": ["./skills/"]
+}
