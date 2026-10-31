@@ -1,0 +1,9 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "decision-memory",
+  "version": "1.0.0",
+  "description": "Decisions made in chat become dated records, every older mention gets fixed or stamped, and a drift check flags any live doc still using a retired name.",
+  "author": { "name": "Sori Han" },
+  "license": "MIT",
+  "skills": ["./skills/"]
+}

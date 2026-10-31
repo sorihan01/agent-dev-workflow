@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=\"$CLAUDE_PROJECT_DIR/tools/drift-check.py\"; [ -f \"$f\" ] && python3 \"$f\" --quiet; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

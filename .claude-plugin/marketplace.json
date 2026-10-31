@@ -2,12 +2,20 @@
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "agent-dev-workflow",
   "description": "Workflows for running real work through AI coding agents: a plan-check-log loop, decision memory with drift checks, and generated views that can't invent facts.",
-  "owner": { "name": "Sori Han" },
+  "owner": {
+    "name": "Sori Han"
+  },
   "plugins": [
     {
       "name": "core-loop",
       "description": "Plan before code, three checks before done, a running log the agent can't skip.",
       "source": "./workflows/core-loop",
+      "category": "productivity"
+    },
+    {
+      "name": "decision-memory",
+      "description": "Decisions made in chat become dated records; a drift check flags any live doc still using a retired name.",
+      "source": "./workflows/decision-memory",
       "category": "productivity"
     }
   ]

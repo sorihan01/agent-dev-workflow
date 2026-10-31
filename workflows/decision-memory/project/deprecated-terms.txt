@@ -1,0 +1,5 @@
+# Retired names. One per line: old term | replacement | where the rule lives
+# tools/drift-check.py flags any live .md/.mdc mention outside a "Superseded" stamp,
+# a rename note, or decisions/. /decide appends here when a name changes.
+# Matching is case-insensitive, whole phrase. Example:
+# Project Atlas | Northstar | decisions/2026-01-15-rename-atlas.md
