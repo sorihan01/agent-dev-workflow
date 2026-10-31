@@ -15,7 +15,7 @@ The cause it found: the weekly price read only ran when someone started it on a 
 The founder picked option **b** from the agent's plan card in two words: *"b yes"*. `/decide` turned that into `decisions/2026-10-31-weekly-run-on-github-actions.md`:
 
 > **Context:** no prices were read after the Oct 8–14 week; `npm run weekly` only ran when someone started it on the Mac, so every row went empty.
-> **Decision (founder):** "b yes": `.github/workflows/weekly.yml` runs `node scripts/weekly.ts` on GitHub Actions every Thu, Fri, Sat and Sun at 13:00 UTC (06:00 PDT / 05:00 PST), plus a manual run button. The script stays idempotent (a stored week is skipped, $0), keeps its $3 cap and `npm run check` gate, and still deploys to production under `…-weekly-run-deploys-without-review.md`.
+> **Decision (founder):** "b yes": `.github/workflows/weekly.yml` runs `node scripts/weekly.ts` on GitHub Actions every Thu, Fri, Sat and Sun at 13:00 UTC, plus a manual run button. The script stays idempotent (a stored week is skipped, $0), keeps its $3 cap and `npm run check` gate, and still deploys to production under `…-weekly-run-deploys-without-review.md`.
 > **Consequences:** secrets … live in the repo's GitHub secrets, the only copy outside the root `.env.local`; … a failed run, or a store still without this week's data on Sunday, makes GitHub email the founder. Flyer images downloaded in CI hold only the newest week, so production `/review` loses last week's pages. The "Mac now, NAS later" plan in `AGENTS.md` is superseded.
 
 What to notice: the $3 spend cap and the deploy rule weren't decided again. They point at the earlier decisions that set them.
