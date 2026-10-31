@@ -1,0 +1,9 @@
+{
+  "title": "Project status",
+  "facts": [
+    { "label": "Next step", "source": "NEXT.md", "extract": "section:Immediate Next Steps" },
+    { "label": "Blocked on", "source": "NEXT.md", "extract": "section:Potential Roadblocks" },
+    { "label": "Decisions recorded", "source": "decisions", "extract": "count:20*.md" },
+    { "label": "Tracker", "source": "AGENTS.md", "extract": "line:^- Tasks: (.*)" }
+  ]
+}

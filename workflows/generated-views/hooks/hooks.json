@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "f=\"$CLAUDE_PROJECT_DIR/tools/build-view.py\"; [ -f \"$f\" ] && python3 \"$f\" --check --quiet; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}

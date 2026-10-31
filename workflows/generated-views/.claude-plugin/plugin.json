@@ -1,0 +1,8 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "generated-views",
+  "version": "1.0.0",
+  "description": "Status pages and summaries built from the documents that own each fact: every row needs a source that exists, nothing is typed by hand, and a stale view fails a check.",
+  "author": { "name": "Sori Han" },
+  "license": "MIT"
+}
