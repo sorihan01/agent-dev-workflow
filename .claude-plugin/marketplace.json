@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.schemastore.org/claude-code-marketplace.json",
   "name": "agent-dev-workflow",
-  "description": "Workflows for running real work through AI coding agents: a plan-check-log loop, decision memory with drift checks, and generated views that can't invent facts.",
+  "description": "Workflows for running real work through AI coding agents: a plan-check-log loop, decision memory with drift checks, generated views that can't invent facts, parallel sessions without collisions, and an after-merge wrap-up.",
   "owner": {
     "name": "Sori Han"
   },
@@ -22,6 +22,18 @@
       "name": "generated-views",
       "description": "Views built from source docs: no typed facts, a stale view fails a check.",
       "source": "./workflows/generated-views",
+      "category": "productivity"
+    },
+    {
+      "name": "parallel-sessions",
+      "description": "Several agent sessions in one workspace: a desk per ticket (worktrees, ports, status), a log split one file per ticket, fast-forward-only landing.",
+      "source": "./workflows/parallel-sessions",
+      "category": "productivity"
+    },
+    {
+      "name": "after-merge",
+      "description": "A background merge watch, a read-only smoke check, and /landed: production checks, one evidence note, a past-tense log entry.",
+      "source": "./workflows/after-merge",
       "category": "productivity"
     }
   ]

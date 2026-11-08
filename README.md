@@ -2,7 +2,7 @@
 
 How one founder runs real ventures through AI coding agents: **13 repos, 824 commits and 101 recorded decisions between 2026-09-09 and 2026-10-31** ([PROOF.md](PROOF.md)). The agents do the building. The human approves plans and reads ✅/❌ reports. The rules a script can enforce are enforced by one. The rest are written so a reviewer can spot a skipped step from the report.
 
-Each workflow below installs on its own. Take one, or all three.
+Each workflow below installs on its own. Take one, or all five.
 
 ## What's different from opening Claude Code
 
@@ -22,8 +22,10 @@ Each workflow below installs on its own. Take one, or all three.
 | [**core-loop**](workflows/core-loop/) | you review an agent's work and keep finding out it was wrong after the fact | `/ticket` → `/start` → build → `/wrap`, 11 rules, a Stop hook that enforces the running log |
 | [**decision-memory**](workflows/decision-memory/) | your project changes direction faster than its docs do | `/decide`, dated decision records, a retired-names list, a drift check on every session start |
 | [**generated-views**](workflows/generated-views/) | you want status pages and summaries you can trust | a view builder where every fact needs a source, and a stale view fails a check |
+| [**parallel-sessions**](workflows/parallel-sessions/) | you run two or more agent sessions on one project at once | a desk per ticket (worktrees, ports, status), the log split one file per ticket, fast-forward-only landing, a Stop hook on the split log |
+| [**after-merge**](workflows/after-merge/) | your agent opens a PR and never finds out if it worked live | a background merge watch, a read-only smoke check, `/landed`: production checks, one evidence note, a past-tense log entry |
 
-They stack: core-loop produces the log and decisions, decision-memory keeps them true, generated-views turns them into views without retyping anything.
+They stack: core-loop produces the log and decisions, decision-memory keeps them true, generated-views turns them into views without retyping anything. parallel-sessions lets several sessions run that loop at once; after-merge carries each step past the merge to production.
 
 ```
             core-loop                      decision-memory                 generated-views
@@ -50,7 +52,7 @@ Or as Claude Code plugins (skills and hooks then update with this repo):
 ```
 then `./install.sh <workflow> <project> --files-only` for the project files (rules, `NEXT.md`, templates).
 
-Needs `bash`, `git`, `python3`. No packages.
+Needs `bash`, `git`, `python3`; after-merge also needs `curl` and the GitHub CLI (`gh`). No packages.
 
 ## See it on real work
 
@@ -62,7 +64,7 @@ Needs `bash`, `git`, `python3`. No packages.
 bash tests/run.sh
 ```
 
-It installs every workflow into throwaway projects and proves each enforcement fires: the Stop hook blocks, the drift check catches a retired name, the view builder refuses a missing source. It runs against a throwaway `HOME`, so your own Claude Code settings are untouched.
+It installs every workflow into throwaway projects and proves each enforcement fires: the Stop hooks block, the drift check catches a retired name, the view builder refuses a missing source, a desk refuses a second session and a dirty close, landing refuses another session's uncommitted edits, and the smoke check fails on anything it could not reach. It runs against a throwaway `HOME`, so your own Claude Code settings are untouched.
 
 ## Also in the private setup, not packaged yet
 

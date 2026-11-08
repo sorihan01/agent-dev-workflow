@@ -54,4 +54,13 @@ fi
 
 gi="$target/.gitignore"; touch "$gi"
 grep -qxF ".claude/.session/" "$gi" || { echo ".claude/.session/" >> "$gi"; echo "  .gitignore: .claude/.session/"; }
+# A workflow's own build outputs and local state (its gitignore file, one pattern per line).
+if [ -f "$src/gitignore" ]; then
+  while IFS= read -r pat; do
+    [ -n "$pat" ] || continue
+    grep -qxF "$pat" "$gi" || { echo "$pat" >> "$gi"; echo "  .gitignore: $pat"; }
+  done < "$src/gitignore"
+fi
+# Tools copied from the repo keep their run permission.
+[ ! -d "$target/tools" ] || find "$target/tools" -maxdepth 1 -name '*.sh' -exec chmod +x {} +
 echo "Done. Start a new Claude Code session in $target so the rules and skills load."
