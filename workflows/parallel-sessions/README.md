@@ -44,4 +44,4 @@ Needs `bash`, `git` 2.31 or newer, `python3`. The tests run on macOS; the script
 
 Then edit `desk.conf`: one `REPOS` line per repo (`name|path|base port|install command`). A repo path of `.` is the workspace itself.
 
-**With core-loop:** they work together. core-loop's Stop hook checks that `NEXT.md` changed; this one rebuilds `NEXT.md` from `.next/` first, so editing your ticket's file satisfies both. If core-loop already put a tracked `NEXT.md` in the project, untrack it once (`git rm --cached NEXT.md`) so it can be a build output.
+**With core-loop:** remove core-loop's Stop hook line (`check-next.sh`) from `.claude/settings.json`; this workflow's hook replaces it, because `NEXT.md` is now a build output. If core-loop already tracked `NEXT.md`, run `git rm --cached NEXT.md` once.

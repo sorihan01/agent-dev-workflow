@@ -52,7 +52,7 @@ Or as Claude Code plugins (skills and hooks then update with this repo):
 ```
 then `./install.sh <workflow> <project> --files-only` for the project files (rules, `NEXT.md`, templates).
 
-Needs `bash`, `git`, `python3`. No packages.
+Needs `bash`, `git`, `python3`; after-merge also needs `curl` and the GitHub CLI (`gh`). No packages.
 
 ## See it on real work
 
