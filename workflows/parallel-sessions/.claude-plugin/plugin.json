@@ -1,0 +1,10 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "parallel-sessions",
+  "version": "1.0.0",
+  "description": "Several agent sessions in one workspace without collisions: a desk per ticket (worktrees, ports, status), a running log split one file per ticket, and a fast-forward-only land script.",
+  "author": {
+    "name": "Sori Han"
+  },
+  "license": "MIT"
+}

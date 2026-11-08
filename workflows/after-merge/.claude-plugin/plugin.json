@@ -1,0 +1,13 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "after-merge",
+  "version": "1.0.0",
+  "description": "Done means checked on production and written down: a background merge watch, a read-only smoke check, and /landed for production checks, one evidence note and a past-tense log entry.",
+  "author": {
+    "name": "Sori Han"
+  },
+  "skills": [
+    "./skills/"
+  ],
+  "license": "MIT"
+}
